@@ -114,7 +114,7 @@ func (t *PrintableTable) printRow(row []string) {
 
 func (t *PrintableTable) cellValue(col int, value string) string {
 	padding := ""
-	if col < len(t.maxSizes)-1 {
+	if col < len(t.headers)-1 {
 		padding = strings.Repeat(" ", t.maxSizes[col]-runewidth.StringWidth(Decolorize(value))+minSpace)
 	}
 	return fmt.Sprintf("%s%s", value, padding)
